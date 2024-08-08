@@ -1,0 +1,5 @@
+rootProject.name = 'nullaway-example'
+include 'nullaway-library-models'
+include 'example-project'
+include 'external-module'
+
