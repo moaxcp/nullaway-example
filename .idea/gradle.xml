@@ -9,6 +9,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/example-project" />
+            <option value="$PROJECT_DIR$/external-module" />
             <option value="$PROJECT_DIR$/nullaway-library-models" />
           </set>
         </option>

@@ -6,9 +6,8 @@ import com.google.common.collect.ImmutableSetMultimap;
 import com.uber.nullaway.LibraryModels;
 
 @AutoService(LibraryModels.class)
-public class CheckModel implements LibraryModels {
-    private MethodRef method1 = MethodRef.methodRef("com.github.moaxcp.nullaway.external.Check", "method(java.lang.String)");
-    private MethodRef method2 = MethodRef.methodRef("com.github.moaxcp.nullaway.external.Check", "method(java.lang.String,java.lang.String)");
+public class NonNullMapParameterConstructorModel implements LibraryModels {
+    private MethodRef constructor = MethodRef.methodRef("com.github.moaxcp.nullaway.external.NonNullMapConstructorParameterCheck", "NonNullMapConstructorParameterCheck(java.util.Map<java.lang.String,java.lang.String>)");
 
     @Override
     public ImmutableSetMultimap<MethodRef, Integer> failIfNullParameters() {
@@ -23,8 +22,7 @@ public class CheckModel implements LibraryModels {
     @Override
     public ImmutableSetMultimap<MethodRef, Integer> nonNullParameters() {
         return ImmutableSetMultimap.<MethodRef, Integer>builder()
-                .put(method1, 0)
-                .put(method2, 0)
+                .put(constructor, 0)
                 .build();
     }
 
@@ -45,10 +43,7 @@ public class CheckModel implements LibraryModels {
 
     @Override
     public ImmutableSet<MethodRef> nullableReturns() {
-        return ImmutableSet.<MethodRef>builder()
-                .add(method1)
-                .add(method2)
-                .build();
+        return ImmutableSet.<MethodRef>builder().build();
     }
 
     @Override
